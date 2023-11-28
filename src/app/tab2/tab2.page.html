@@ -1,17 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Lista de People da API do Star Wars
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!---Aqui iremos inserir a lista de people(pessoas) da API do star wars-->
+  
+  <!--Código novo-->
+  <ion-list *ngFor="let item of peoples"><!--<ul *ngFor="let item of peoples">-->
+    <ion-item><!--<li>{{item.name}}</li>-->
+      <ion-card>
+        <ion-thumbnail>
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-card-header>
+          <ion-card-title>{{item.name}}</ion-card-title>
+          <ion-card-subtitle>{{item.birth_year}} - {{item.gender}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  
+  
+  
+  
+  
+  
+  
+  <!--Código antigo-->
+  <!--ul *ngFor="let item of peoples">
+    <li>{{item.name}}</li>
+    <li>{{item.height}}</li>
+    <li>{{item.birth_year}}</li>
+    <li>
+        <h3>Lista de filmes:</h3>
+        <ul *ngFor="let films of item.films">
+            <li>{{films}}</li>
+            <hr>
+        </ul>
+    </li>
+    <hr>
+</ul-->
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
